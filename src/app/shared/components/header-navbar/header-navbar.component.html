@@ -1,6 +1,14 @@
-<header>
+<nav [class.active]="isNavbarOpen">
+  <button
+    class="close-responsive-navbar-button"
+    (click)="fireCloseNavbarEvent()"
+  >
+    <span class="close-icon-bar"></span>
+    <span class="close-icon-bar"></span>
+  </button>
+
   <svg
-    class="header-logo"
+    class="nav-logo"
     viewBox="0 0 108 17"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -59,11 +67,13 @@
     />
   </svg>
 
-  <app-header-navbar [isNavbarOpen]="navbarState" (closeNavbarEvent)="closeNavbar()"></app-header-navbar>
+  <ul>
+    <li (click)="fireCloseNavbarEvent()">Home</li>
+    <li (click)="fireCloseNavbarEvent()">Features</li>
+    <li (click)="fireCloseNavbarEvent()">Community</li>
+    <li (click)="fireCloseNavbarEvent()">Blog</li>
+    <li (click)="fireCloseNavbarEvent()">Pricing</li>
+  </ul>
 
-  <button class="open-responsive-navbar-button" (click)="openNavbar()">
-    <span class="responsive-burger-menu-bar"></span>
-    <span class="responsive-burger-menu-bar"></span>
-    <span class="responsive-burger-menu-bar"></span>
-  </button>
-</header>
+  <button class="register-now-button">Register Now <span>&#8594;</span></button>
+</nav>

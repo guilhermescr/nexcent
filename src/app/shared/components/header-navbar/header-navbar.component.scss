@@ -1,0 +1,148 @@
+@use "../../../../assets/utilities/mixins";
+
+@keyframes showNavbarAnimation {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+:host {
+  nav {
+    @include mixins.flex-center;
+    gap: 2rem;
+
+    .nav-logo {
+      display: none;
+    }
+
+    ul {
+      @include mixins.flex-center;
+      gap: 1rem;
+      list-style: none;
+
+      li {
+        color: #4d4d4d;
+        cursor: pointer;
+        font-weight: 500;
+        text-align: center;
+
+        &:first-child {
+          margin-right: 1rem;
+        }
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .register-now-button {
+      background-color: #4caf4f;
+      border: none;
+      border-radius: 0.3rem;
+      color: #ffffff;
+      cursor: pointer;
+      @include mixins.flex-center;
+      font-size: 1rem;
+      font-weight: 500;
+      gap: 0.8rem;
+      padding: 0.8rem 1.7rem;
+      text-align: center;
+
+      &:hover {
+        background-color: #388e3b;
+      }
+
+      &:active {
+        opacity: 0.9;
+      }
+
+      span {
+        font-size: 1.2rem;
+        padding-bottom: 0.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    nav {
+      ul,
+      .register-now-button {
+        display: none;
+      }
+
+      &.active {
+        animation: showNavbarAnimation 0.2s forwards;
+        background-color: #388e3b;
+        @include mixins.flex-center(column);
+        left: 0;
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 100%;
+
+        .close-responsive-navbar-button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          height: 30px;
+          position: absolute;
+          right: 2rem;
+          top: 1.5rem;
+          width: 30px;
+
+          .close-icon-bar {
+            background-color: #fff;
+            display: block;
+            height: 3px;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+
+            &:nth-child(1) {
+              transform: translateY(-50%) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+              transform: translateY(-50%) rotate(-45deg);
+            }
+          }
+        }
+
+        .nav-logo {
+          display: block;
+          max-width: 12rem;
+        }
+
+        ul {
+          @include mixins.flex-center(column);
+
+          li {
+            color: #fff;
+            font-size: 1.2rem;
+
+            &:first-child {
+              margin-right: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-height: 320px) {
+  :host {
+    nav.active {
+      .nav-logo {
+        display: none;
+      }
+    }
+  }
+}

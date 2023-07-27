@@ -1,0 +1,49 @@
+@use "../../../../assets/utilities/mixins";
+
+:host {
+  header {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    padding-block: 0.7rem;
+
+    .header-logo {
+      max-width: 10rem;
+    }
+
+    .open-responsive-navbar-button {
+      background-color: #388e3b;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      display: none;
+      gap: 0.4rem;
+      justify-content: space-between;
+      padding: 0.7rem;
+      transition: all 0.1s ease-in-out;
+      width: 45px;
+
+      &:hover {
+        background-color: #4caf4f;
+      }
+
+      .responsive-burger-menu-bar {
+        background-color: #fff;
+        display: block;
+        height: 3px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    header {
+      padding-block: 1.2rem;
+
+      .open-responsive-navbar-button {
+        @include mixins.flex-center(column);
+      }
+    }
+  }
+}
