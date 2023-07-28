@@ -3,7 +3,7 @@
 
 :host {
   > section {
-    padding-block: 1.7rem;
+    padding-top: 1.7rem;
 
     h2 {
       @include mixins.centered-heading;
@@ -17,7 +17,10 @@
     .clients {
       @include mixins.flex-center;
       justify-content: space-between;
-      padding-block: 2rem;
+      // padding-block: 2rem;
+      margin-bottom: 1.74rem;
+      margin-top: 0.7rem;
+      padding-block: 1.09rem;
     }
   }
 }

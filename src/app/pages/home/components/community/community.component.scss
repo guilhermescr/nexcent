@@ -7,7 +7,7 @@
 
     h2 {
       @include mixins.centered-heading;
-      max-width: 25.5rem;
+      max-width: 23.57938rem;
       width: 100%;
     }
 
@@ -17,34 +17,35 @@
     }
 
     .who-is-suitable {
-      @include mixins.flex-center;
-      justify-content: space-between;
-      padding: 1.8rem 1rem;
+      display: grid;
+      gap: 5.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+      margin-top: 0.7rem;
+      padding-block: 0.44rem;
 
       .suitable-group {
         box-shadow: 0px 1.39214px 2.78428px rgba(171, 190, 209, 0.2);
         border-radius: 5.56856px;
         @include mixins.flex-center(column);
-        gap: 0.8rem;
-        max-width: 16.6rem;
-        padding: 16.7057px 22.2742px;
-        width: 100%;
+        padding: 1.04413rem 1.39213rem;
 
-        &:nth-child(2) {
-          max-width: 16.3rem;
+        img {
+          margin-bottom: 0.7rem;
         }
 
         h3 {
           color: base.$dGray;
+          font-size: 1.21813rem;
           font-weight: 700;
-          line-height: 1.5rem;
+          line-height: 1.56619rem;
+          margin-bottom: 0.35rem;
           max-width: 10rem;
           text-align: center;
         }
 
-        > p {
-          font-size: 0.78rem;
+        p {
           @include mixins.thin-text;
+          max-width: 15.3419rem;
           text-align: center;
         }
       }
