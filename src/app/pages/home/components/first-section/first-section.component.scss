@@ -1,0 +1,97 @@
+@use "../../../../../assets/utilities/mixins";
+
+:host {
+  height: 100%;
+
+  main {
+    @include mixins.flex-center;
+    gap: 2rem;
+    height: 100%;
+    justify-content: space-between;
+    min-height: calc(100vh - 74px);
+    padding-block: 1rem;
+
+    .main__left-side {
+      h1 {
+        color: #4d4d4d;
+        font-size: 3.5rem;
+        font-weight: 600;
+
+        strong {
+          color: #4caf4f;
+          display: block;
+          font-weight: 600;
+        }
+      }
+
+      p {
+        @include mixins.thin-text;
+        margin-top: 1rem;
+        margin-bottom: 1.7rem;
+      }
+    }
+
+    .main__right-side {
+      .main-illustration {
+        width: 300px;
+      }
+    }
+
+    .carousel-balls {
+      bottom: 0.8rem;
+      @include mixins.flex-center;
+      gap: 0.4rem;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+
+      .carousel-ball {
+        background-color: #4caf4f;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 0.5rem;
+        width: 0.5rem;
+
+        &:not(.active) {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  :host {
+    main {
+      .main__left-side {
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  :host {
+    main {
+      @include mixins.flex-center(column-reverse);
+      padding-block: 2rem;
+
+      .main__left-side {
+        h1 {
+          font-size: 1.8rem;
+          line-height: initial;
+        }
+      }
+
+      .main__right-side {
+        .main-illustration {
+          max-width: 15rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

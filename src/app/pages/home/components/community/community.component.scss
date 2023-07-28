@@ -1,0 +1,63 @@
+@use "../../../../../assets/utilities/base";
+@use "../../../../../assets/utilities/mixins";
+
+:host {
+  > section {
+    padding-bottom: 1.7rem;
+
+    h2 {
+      @include mixins.centered-heading;
+      max-width: 25.5rem;
+      width: 100%;
+    }
+
+    > p {
+      @include mixins.thin-text;
+      text-align: center;
+    }
+
+    .who-is-suitable {
+      @include mixins.flex-center;
+      justify-content: space-between;
+      padding: 1.8rem 1rem;
+
+      .suitable-group {
+        box-shadow: 0px 1.39214px 2.78428px rgba(171, 190, 209, 0.2);
+        border-radius: 5.56856px;
+        @include mixins.flex-center(column);
+        gap: 0.8rem;
+        max-width: 16.6rem;
+        padding: 16.7057px 22.2742px;
+        width: 100%;
+
+        &:nth-child(2) {
+          max-width: 16.3rem;
+        }
+
+        h3 {
+          color: base.$dGray;
+          font-weight: 700;
+          line-height: 1.5rem;
+          max-width: 10rem;
+          text-align: center;
+        }
+
+        > p {
+          font-size: 0.78rem;
+          @include mixins.thin-text;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    > section {
+      .who-is-suitable {
+        @include mixins.flex-center(column);
+      }
+    }
+  }
+}

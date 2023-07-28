@@ -1,0 +1,43 @@
+@use "../../../../../assets/utilities/base";
+@use "../../../../../assets/utilities/mixins";
+
+:host {
+  > section {
+    padding-block: 1.7rem;
+
+    h2 {
+      @include mixins.centered-heading;
+    }
+
+    > p {
+      @include mixins.thin-text;
+      text-align: center;
+    }
+
+    .clients {
+      @include mixins.flex-center;
+      justify-content: space-between;
+      padding-block: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    > section {
+      .clients {
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  :host {
+    > section {
+      .clients {
+        @include mixins.flex-center(column);
+      }
+    }
+  }
+}
