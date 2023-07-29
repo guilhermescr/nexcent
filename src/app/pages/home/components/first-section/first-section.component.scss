@@ -79,6 +79,10 @@
       @include mixins.flex-center(column-reverse);
       padding-block: 2rem;
 
+      > div {
+        width: 100%;
+      }
+
       .main__left-side {
         h1 {
           font-size: 1.8rem;
@@ -88,6 +92,8 @@
 
       .main__right-side {
         .main-illustration {
+          display: block;
+          margin-inline: auto;
           max-width: 15rem;
           width: 100%;
         }

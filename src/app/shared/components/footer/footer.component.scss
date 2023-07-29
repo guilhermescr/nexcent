@@ -1,0 +1,172 @@
+@use "../../../../assets/utilities/mixins";
+
+:host {
+  > div {
+    background-color: #263238;
+
+    footer {
+      align-items: flex-start;
+      display: flex;
+      gap: 5.43806rem;
+      padding-block: 2.78425rem;
+
+      * {
+        color: #fff;
+      }
+
+      .company-info {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        > img {
+          max-width: 10.5rem;
+          width: 100%;
+        }
+
+        .copyright {
+          span {
+            color: #f5f7fa;
+            display: block;
+            font-weight: 400;
+            line-height: 0.87006rem;
+            width: max-content;
+
+            &:first-child {
+              margin-bottom: 0.9rem;
+            }
+          }
+        }
+
+        .social-links {
+          @include mixins.flex-center;
+          gap: 0.69606rem;
+          justify-content: space-between;
+          transform: translateX(-0.2rem);
+
+          img {
+            cursor: pointer;
+            width: 2rem;
+
+            &:hover {
+              filter: brightness(0.8);
+            }
+          }
+        }
+      }
+
+      .links {
+        display: grid;
+        gap: 1.30513rem;
+        grid-template-columns: repeat(3, 1fr);
+
+        h2 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          line-height: 1.21813rem;
+          margin-bottom: 1.6rem;
+        }
+
+        .links__company,
+        .links__support {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+
+          .link-items {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+
+            a {
+              color: #f5f7fa;
+              cursor: pointer;
+              font-weight: 400;
+              line-height: 0.87006rem;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .links__stay-updated {
+          .email-field {
+            max-width: max-content;
+            position: relative;
+
+            input {
+              background-color: #ffffff34;
+              border: none;
+              border-radius: 0.5rem;
+              color: #d9dbe1;
+              font-size: 0.9rem;
+              font-weight: 400;
+              line-height: 0.87006rem;
+              padding: 0.85rem 1rem;
+              padding-right: 2.5rem;
+
+              &::placeholder {
+                color: #d9dbe1;
+              }
+            }
+
+            .send-icon {
+              cursor: pointer;
+              max-width: 1.4rem;
+              position: absolute;
+              right: 0.7rem;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  :host {
+    > div {
+      footer {
+        @include mixins.flex-center(column);
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  :host {
+    > div {
+      footer {
+        * {
+          width: 100%;
+        }
+
+        .company-info {
+          .social-links {
+            max-width: max-content;
+          }
+        }
+
+        .links {
+          @include mixins.flex-center(column);
+
+          * {
+            @include mixins.flex-center(column);
+          }
+
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
