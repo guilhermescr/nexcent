@@ -1,0 +1,63 @@
+@use "../../../../../assets/utilities/mixins";
+
+:host {
+  .nexcent-blog {
+    margin-bottom: 3.82rem;
+
+    h2 {
+      @include mixins.centered-heading;
+    }
+
+    > p {
+      @include mixins.thin-text;
+      line-height: 1.4rem;
+      margin-inline: auto;
+      max-width: 39.5rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .blog-posts {
+      display: grid;
+      gap: 1.04rem;
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+      margin-top: 0.7rem;
+
+      .blog-post {
+        position: relative;
+
+        img {
+          border-radius: 0.34806rem;
+          margin-bottom: 3.55rem;
+          width: 100%;
+        }
+
+        .content {
+          background-color: #f5f7fa;
+          border-radius: 0.34806rem;
+          bottom: 5%;
+          box-shadow: 0 0.348rem 0.6961rem 0 #abbed166;
+          @include mixins.flex-center(column);
+          gap: 0.69606rem;
+          justify-content: flex-start;
+          left: 50%;
+          max-width: 16rem;
+          padding: 0.69606rem;
+          position: absolute;
+          transform: translateX(-50%);
+          width: 100%;
+
+          h3 {
+            color: #717171;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.21813rem;
+            max-width: 14.4rem;
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

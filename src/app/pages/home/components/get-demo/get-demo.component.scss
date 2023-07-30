@@ -1,0 +1,30 @@
+@use "../../../../../assets/utilities/mixins";
+
+:host {
+  section {
+    @include mixins.flex-center(column);
+    gap: 1.39rem;
+    padding-block: 1.39rem;
+
+    p {
+      color: #263238;
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 3rem;
+      max-width: 38.58838rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  :host {
+    section {
+      p {
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}

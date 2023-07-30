@@ -7,8 +7,10 @@
 
     h2 {
       @include mixins.centered-heading;
-      max-width: 23.57938rem;
-      width: 100%;
+
+      span {
+        display: block;
+      }
     }
 
     > p {

@@ -5,6 +5,7 @@ import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TertiaryButtonComponent } from './components/tertiary-button/tertiary-button.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderNavbarComponent,
     PrimaryButtonComponent,
     FooterComponent,
+    TertiaryButtonComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -20,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
     WrapperComponent,
     PrimaryButtonComponent,
+    TertiaryButtonComponent,
   ],
 })
 export class SharedModule {}
