@@ -1,0 +1,98 @@
+@use "../../../../../assets/utilities/mixins";
+
+:host {
+  .achievements {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    padding-block: 2.78rem;
+
+    .content {
+      h2 {
+        @include mixins.centered-heading;
+        text-align: start;
+
+        strong {
+          color: #4caf4f;
+          display: block;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .counts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+      row-gap: 1.74019rem;
+
+      .count {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        img,
+        svg {
+          height: 2.08819rem;
+          width: 2.08819rem;
+        }
+
+        svg {
+          stroke: #4caf4f;
+          stroke-width: 1rem;
+
+          * {
+            fill: #4caf4f;
+            stroke-width: 1rem;
+          }
+        }
+
+        .count-content {
+          h3 {
+            @include mixins.centered-heading;
+            margin-bottom: 0;
+            text-align: start;
+          }
+
+          span {
+            @include mixins.thin-text;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    .achievements {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  :host {
+    .achievements {
+      align-items: flex-start;
+      margin-inline: auto;
+      max-width: 20rem;
+
+      .content {
+        h2,
+        p {
+          text-align: center;
+        }
+      }
+
+      .counts {
+        @include mixins.flex-center(column);
+        margin-inline: auto;
+
+        .count {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
