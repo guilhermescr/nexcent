@@ -145,22 +145,18 @@
   :host {
     > div {
       footer {
-        * {
+        gap: 3rem;
+
+        .company-info,
+        .links,
+        .links *,
+        .copyright {
+          @include mixins.flex-center(column);
           width: 100%;
         }
 
-        .company-info {
-          .social-links {
-            max-width: max-content;
-          }
-        }
-
         .links {
-          @include mixins.flex-center(column);
-
-          * {
-            @include mixins.flex-center(column);
-          }
+          gap: 3.5rem;
 
           h2 {
             font-size: 1.5rem;

@@ -40,12 +40,8 @@
   }
 
   .carousel-balls {
-    // bottom: 0.8rem;
     @include mixins.flex-center;
     gap: 0.4rem;
-    // left: 50%;
-    // position: fixed;
-    // transform: translateX(-50%);
 
     .carousel-ball {
       background-color: #4caf4f;
