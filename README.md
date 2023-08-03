@@ -6,10 +6,10 @@
 
 _OBS: I did not create the design. I just implemented it with my coding skills._
 
-## Desktop / Mobile View ▶
+## ▶ Desktop / Mobile View
 
 <img src="src/assets/gifs/readmes/nexcent-desktop-and-mobile-view.gif" alt="Nexcent Desktop/Mobile Presentation GIF" />
 
-## Deploy
+## 🔗 Deploy
 
 **Access the Nexcent Landing Page Website:** [click here.](https://nexcents.vercel.app/)
